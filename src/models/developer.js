@@ -1,11 +1,11 @@
-class Program {
-    constructor(
-        id,
-        name,
-        url
-    ) {
-        this.id = id;
-        this.name = name;
-        this.url = url
-    }
-  }
+export class Developer {
+	constructor(
+		id,
+		name,
+		url
+	) {
+		this.id = id;
+		this.name = name;
+		this.url = url;
+	}
+}

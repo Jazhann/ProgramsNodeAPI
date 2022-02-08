@@ -1,12 +1,8 @@
-const express = require('express');
-const ProgramController = require('../controllers/program');
+import express from 'express';
+import * as ProgramController from '../controllers/program.js';
 
-const api = express.Router();
+const programRoutes = express.Router();
+programRoutes.get('/getProgram/:id', ProgramController.getProgram);
+programRoutes.get('/getProgram', ProgramController.getPrograms);
 
-
-api.get('/getProgram/:id', ProgramController.getProgram);
-
-api.get('/getProgram', ProgramController.getPrograms);
-
-
-module.exports = api;
+export { programRoutes };

@@ -1,15 +1,14 @@
+const getProgram = (req, res) => {
 
-function getProgram(req, res) {
+	const id = req.params.id;
+};
 
-    const id = req.params.id;
-}
+const getPrograms = (req, res) => {
 
-function getPrograms(req, res) {
+};
 
-}
-
-module.exports = {
-    getProgram,
-    getPrograms
+export {
+	getProgram,
+	getPrograms
 };
   

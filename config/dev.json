@@ -1,0 +1,5 @@
+{
+    "port": 8000,
+    "programsApiUrl": "http://localhost:3000/programs",
+    "developersApiUrl": "http://localhost:3000/developers"
+}
