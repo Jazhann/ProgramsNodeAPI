@@ -1,5 +1,5 @@
 export class ProgramDTO {
-	constructor(
+	constructor({
 		id,
 		author_info,
 		title,
@@ -10,7 +10,7 @@ export class ProgramDTO {
 		thumbnail,
 		rating,
 		total_downloads,
-		compatible
+		compatible}
 	) {
 		this.id = id;
 		this.author_info = author_info;
@@ -23,5 +23,9 @@ export class ProgramDTO {
 		this.rating = rating;
 		this.total_downloads = total_downloads;
 		this.compatible = compatible;
+	}
+
+	map(field, value) {
+		this[field] = value;
 	}
 }

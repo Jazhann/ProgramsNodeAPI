@@ -1,5 +1,19 @@
 {
     "port": 8000,
-    "programsApiUrl": "http://localhost:3000/programs",
-    "developersApiUrl": "http://localhost:3000/developers"
+    "apiData": [
+        { 
+            "url": "http://localhost:3000/programs",
+            "key1": null, 
+            "key2": null,
+            "mapKey": null,  
+            "type": "program" 
+        },
+        { 
+            "url": "http://localhost:3000/developers",
+            "key1": "developer_id", 
+            "key2": "id",
+            "mapKey": "author_info", 
+            "type": "developer" 
+        }
+    ]
 }
