@@ -10,7 +10,7 @@ const getProgram = async (params) => {
 	try {
 		programs = await getPrograms({urls});
 	} catch (error) {
-		console.log(error);
+		throw new Error(error.message);
 	}
 	return programs.find(el => el.id === id);
 };
@@ -32,11 +32,11 @@ const getPrograms = async (params) => {
 				...mapData
 			});
 		} catch (error) {
-			console.log(error);
+			throw new Error(error.message);
 		}
 	}
 
-	return mapData(dataFetched);
+	return dataFetched.length ? mapData(dataFetched) : dataFetched;
 
 };
 
