@@ -1,5 +1,0 @@
-const handleError = () => {
-
-};
-
-export { handleError };

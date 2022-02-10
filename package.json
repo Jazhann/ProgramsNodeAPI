@@ -5,14 +5,14 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "apimock": "json-server --watch ./mock/apimock.json --delay 1000",
+    "apimock": "json-server --watch ./mock/apimock.json --delay 100",
     "start": "SET NODE_ENV=dev && node index.js",
     "start:dev": "SET NODE_ENV=dev && nodemon index.js",
     "start:prod": "SET NODE_ENV=prod && node index.js",
     "start:linux": "NODE_ENV=dev && node index.js",
     "start:dev:linux": "NODE_ENV=dev && nodemom index.js",
     "start:prod:linux": "NODE_ENV=prod && node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "description": "",
