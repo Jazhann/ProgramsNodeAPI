@@ -44,12 +44,14 @@ No it wasn't, i use jest. I write the test after all functionality is done. I ju
 # What would you do to improve the performance/scalability/resilience?
 
 I would:
+
     - implement cache
 
 
 # What would you have done differently if you had had more time? Why?
 
 I would:
+
     - use a db to store config files, in order to have more security
     - use authentication using jwt
     - develop a error handler module
