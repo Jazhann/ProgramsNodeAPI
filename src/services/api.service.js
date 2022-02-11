@@ -12,13 +12,19 @@ const getProgram = async (params) => {
 	if (!Array.isArray(urls) || !urls.length) {
 		throw new Error(CONSTANTS.SERVER_ERROR);
 	}
+
+	if (isNaN(id)) {
+		throw new Error(CONSTANTS.BAD_REQUEST_ERROR);
+	}
+
 	let programs;
 	try {
 		programs = await getPrograms({urls});
 	} catch (error) {
 		throw new Error(error.message);
 	}
-	return programs.find(el => el.id === id);
+
+	return programs.find(el => el.id == id);
 };
 
 /**
@@ -43,7 +49,7 @@ const getPrograms = async (params) => {
 				...mapData
 			});
 		} catch (error) {
-			throw new Error(error.message);
+			throw new Error(CONSTANTS.SERVER_ERROR);
 		}
 	}
 
@@ -63,7 +69,7 @@ const mapData = (dataToMap) => {
 		const program = new ProgramDTO(p);
 		for (let d of dataToMap) {
 			if (d.type !== CONSTANTS.PROGRAM_TYPE) {
-				const data = d.data.find(e => e[d.key2] == p[d.key1]);
+				const data = {...d.data.find(e => e[d.key2] == p[d.key1])};
 				delete data[d.key2];
 				program.map(d.mapKey, data);
 				programs.push(program);

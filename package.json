@@ -4,6 +4,9 @@
   "type": "module",
   "main": "index.js",
   "license": "ISC",
+  "jest": {
+    "transform": {}
+  },
   "scripts": {
     "apimock": "json-server --watch ./mock/apimock.json --delay 100",
     "start": "SET NODE_ENV=dev && node index.js",
@@ -12,7 +15,7 @@
     "start:linux": "NODE_ENV=dev && node index.js",
     "start:dev:linux": "NODE_ENV=dev && nodemom index.js",
     "start:prod:linux": "NODE_ENV=prod && node index.js",
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "author": "",
   "description": "",
