@@ -26,14 +26,14 @@ scripts:
 
 Structure:
 
-config folder -> contains environments files in json format and config module
-mock -> contains api responses file in json format 
-src ->
-    controllers -> contains program controller which has all methods to handle request.
-    DTOs -> contains data classes files
-    routes -> contains program router which define routes names and redirect to controller
-    services -> contains all services
-    shared -> contains shared files
+- config folder -> contains environments files in json format and config module
+- mock -> contains api responses file in json format 
+- src ->
+    - controllers -> contains program controller which has all methods to handle request.
+    - DTOs -> contains data classes files
+    - routes -> contains program router which define routes names and redirect to controller
+    - services -> contains all services
+    - shared -> contains shared files
 
 
 # Was it your first time writing a unit test, using a particular framework? How did you approach testing?
@@ -44,14 +44,14 @@ No it wasn't, i use jest. I write the test after all functionality is done. I ju
 # What would you do to improve the performance/scalability/resilience?
 
 I would:
-    * implement cache
+    - implement cache
 
 
 # What would you have done differently if you had had more time? Why?
 
 I would:
-    * use a db to store config files, in order to have more security
-    * use authentication using jwt
-    * develop a error handler module
-    * finish all unit test
-    * do e2e test
+    - use a db to store config files, in order to have more security
+    - use authentication using jwt
+    - develop a error handler module
+    - finish all unit test
+    - do e2e test
