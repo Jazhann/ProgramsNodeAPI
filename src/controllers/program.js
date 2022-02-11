@@ -2,6 +2,7 @@ import Joi from 'joi';
 import { env } from '../../config/config.js';
 import { CONSTANTS  } from '../shared/constants.js';
 import * as apiService from '../services/api.service.js';
+import { logger } from '../services/looger.service.js';
 
 
 const idSchema = Joi.number();
@@ -15,17 +16,19 @@ const getProgram = async (req, res) => {
 	const { error, value: id } = idSchema.validate(req.params.id);
 
 	if (error) {
-		res.status(400).send(CONSTANTS.BAD_REQUEST_ERROR);
+		logger.error('ProgramController.getProgram ' + error);
+		return res.status(400).send(CONSTANTS.BAD_REQUEST_ERROR);
 	}
 
 	let program;
 	try {
 		program = await apiService.getProgram({urls: env.apiData, id});
 	} catch (error) {
-		res.status(500).send(error.message);
+		logger.error('ProgramController.getProgram ' + error);
+		return res.status(500).send(error.message);
 	}
 	
-	res.status(program ? 200 : 204).send(program);
+	return res.status(program ? 200 : 204).send(program);
 };
 
 /**
@@ -38,10 +41,11 @@ const getPrograms = async (req, res) => {
 	try {
 		programs = await apiService.getPrograms({urls: env.apiData});
 	} catch (error) {
-		res.status(500).send(error.message);
+		logger.error('ProgramController.getPrograms ' + error);
+		return res.status(500).send(error.message);
 	}
 
-	res.status(programs.length ? 200 : 204).send(programs);
+	return res.status(programs.length ? 200 : 204).send(programs);
 };
 
 export {
