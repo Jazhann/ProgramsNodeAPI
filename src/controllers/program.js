@@ -2,7 +2,7 @@ import Joi from 'joi';
 import { env } from '../../config/config.js';
 import { CONSTANTS  } from '../shared/constants.js';
 import * as apiService from '../services/api.service.js';
-import { logger } from '../services/looger.service.js';
+import { logger } from '../services/logger.service.js';
 
 
 const idSchema = Joi.number();
